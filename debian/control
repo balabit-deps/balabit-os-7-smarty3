@@ -1,0 +1,36 @@
+Source: smarty3
+Section: web
+Priority: optional
+Maintainer: Mike Gabriel <sunweaver@debian.org>
+Uploaders:
+ Debian Edu Packaging Team <debian-edu-pkg-team@lists.alioth.debian.org>,
+Build-Depends: 
+ debhelper (>= 9),
+ pkg-php-tools (>= 1.7~),
+ smarty-lexer (>= 3.1.30+dfsg1-1.1~),
+Standards-Version: 3.9.8
+Vcs-Browser: https://anonscm.debian.org/git/collab-maint/smarty3.git
+Vcs-Git: https://anonscm.debian.org/git/collab-maint/smarty3.git
+Homepage: http://www.smarty.net/
+
+Package: smarty3
+Architecture: all
+Depends:
+ php | php-cgi | php-cli,
+ ${misc:Depends},
+ ${phpcomposer:Debian-require},
+Provides:
+ ${phpcomposer:Debian-provide},
+Suggests:
+ ${phpcomposer:Debian-suggest},
+Conflicts:
+ ${phpcomposer:Debian-conflict},
+Description: ${phpcomposer:description}
+ Smarty is a template engine for PHP. More specifically, it
+ facilitates a manageable way to separate application logic and content
+ from its presentation.
+ .
+ Smarty 3.1 is a departure from 2.0 compatibility. Most notably, all
+ backward compatibility has been moved to a separate class file named
+ SmartyBC.class.php. If you require compatibility with 2.0, you will
+ need to use this class.
